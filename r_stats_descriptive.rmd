@@ -1,0 +1,56 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Ensure that random variables are repeatable:
+set.seed(10)
+```
+
+# Descriptive Statistics
+
+This document can be used to quickly analyze and record the statistics for a given population.  The statistics measured in this document include the mean, variance, standard deviation, range, median, quartiles, and interquartile range.
+
+```{r default_variables, include=FALSE}
+# countData: count of observations in the simulated data.
+countData = 1000
+
+# expectedMean: expected mean of the population.
+expectedMean = 0
+
+# standard_deviation: standard deviation of the simulated group of numbers.
+standard_deviation = 1
+
+# nDigits: The count of significant digits used when printing the results.
+nDigits = 3
+
+# bScientific: Turns on or off scientific notation for results.
+bScientific = TRUE
+```
+```{r r_stats_mean__data, include=FALSE}
+# Prepare a set of data to demonstrate this operation.  Use a matrix for later expansion
+data = matrix(rnorm(n = countData, mean = expectedMean, sd = standard_deviation), nrow = 1000, ncol = 1)
+```
+```{r r_stats_descriptive, include=FALSE}
+# Calculate the variance of the data
+varianceData = var(data)
+
+# Calculate the standard deviation of the data
+stdDevData = sd(data)
+```
+
+### Results
+
+Modify this document to include an analysis of the following descriptive statistics.  Be sure to consider whether it is appropriate to include a **mode**, etc. analysis on a numeric value or any set of data that is not likely to be appropriately categorized when discussing these results with less-technical audiences.
+
+The following histogram shows the general distribution of the data:
+
+```{r histData}
+hist(data)
+```
+
+```{r normData}
+summary(data)
+```
+- **Standard Deviation**: `r format(stdDevData, digits = nDigits, scientific = bScientific)`
