@@ -1,0 +1,20 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Ensure that random variables are repeatable:
+set.seed(10)
+```
+
+# Factorials
+
+A factorial is represented as n!, where n is a positive integer.  A factorial is calculated as follows:
+
+```{r r_factorial}
+# n: the positive integer input to the factorial function.
+n = 10
+
+factorial(n)
+```
