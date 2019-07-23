@@ -1,0 +1,54 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Ensure that random variables are repeatable:
+set.seed(1)
+```
+
+# Mean
+
+The mean of a group of numbers is sum of the numbers divided by the count of the numbers.  This is sometimes referred to as the 'average'.  This document can be used to find the mean of a group of numbers.
+
+### Create variable defaults
+
+```{r default_variables}
+# countData: count of observations in the simulated data.
+countData = 1000
+
+# expectedMean: expected mean of the population.
+expectedMean = 0
+
+# standard_deviation: standard deviation of the simulated group of numbers.
+standard_deviation = 1
+
+# nDigits: The count of significant digits used when printing the results.
+nDigits = 3
+
+# bScientific: Turns on or off scientific notation for results.
+bScientific = TRUE
+```
+
+### Initialize simulated population 
+
+The following code creates a simulated population:
+
+```{r r_stats_mean__data}
+# Prepare a set of data to demonstrate this operation
+data = rnorm(countData, mean = expectedMean, sd = standard_deviation)
+```
+
+### Calculate mean
+
+Using the simulated population, the mean is calculated as follows:
+
+```{r r_stats_mean}
+# Find the mean of the data
+meanData = mean(data)
+```
+
+### Results
+
+The data has a calculated mean of `r format(meanData, digits = nDigits, scientific = bScientific)`.
