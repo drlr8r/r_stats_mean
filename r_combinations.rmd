@@ -1,0 +1,23 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Ensure that random variables are repeatable:
+set.seed(10)
+```
+
+# Combinations
+
+
+The count of unordered combinations of *n* distinct objects taken *k* at a time is:
+
+```{r r_perm02}
+# n: the positive integer input to the factorial function.
+n = 10
+# k: the count of objects taken per event.
+k = 2
+
+print(factorial(n)/(factorial(k)*factorial(n-k)))
+```
